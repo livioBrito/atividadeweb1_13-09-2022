@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #01</title>
+    <style>
+        /* https://caniuse.com/#feat=css-grid */
+        
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: aliceblue;
+            border-radius: 12px;
+            background: rgb(179, 0, 74);
+        }
+
+        body {
+          display: grid;
+          grid-template-columns: 100px 100px 100px 100px;
+          grid-template-columns: repeat(4, 100px) 200px; 
+          grid-template-columns: 50% 50%;
+          grid-template-columns: repeat(12, 8.33%); 
+          grid-template-columns: repeat(3, 3fr) 200px; 
+          /* minmax(100px, 300px) */
+          grid-auto-rows: 200px;
+          grid-auto-rows: minmax(100px, auto);
+          column-gap: 20px;
+          row-gap: 30px;
+          gap: 20px 20px;
+          width: 70%;
+        }
+
+        .adic{
+            grid-column-start: 4;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+
+        .enter{
+            grid-column-start: 4;
+            grid-column-end: 4;
+            grid-row-start: 4;
+            grid-row-end: 6;
+
+        }
+        .del {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 5;  
+        }
+        .d8 {
+            background-color: aqua;
+            grid-column-start: 3;
+            /*grid-column-end: 5;*/
+            grid-column-end: span 2;
+            grid-row-start: 2;
+            /*grid-row-end: 4;*/
+            grid-row-end: span 2;
+        
+        }
+
+        .zero{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 5;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="num">Num <br> Lock</div>
+    <div class="divisao">/</div>
+    <div class="multiplic">*</div>
+    <div class="subtrac">-</div>
+    <div class="adic">+</div>
+    <div class="enter">enter</div>
+    <div class="del">,</div>
+    <div class="zero">0</div>
+    <div class="7">7</div>
+    <div class="8">8</div>
+    <div class="9">9</div>
+    <div class="4">4</div>
+    <div class="5">5</div>
+    <div class="6">6</div>
+    <div class="1">1</div>
+    <div class="2">2</div>
+    <div class="3">3</div>
+</body>
+
+</html>
